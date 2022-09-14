@@ -14,6 +14,7 @@ body {
 .box-container {
   width: 70%;
   margin: 0 auto;
+  
 }
 
 #question {
@@ -115,6 +116,7 @@ body {
   height: 2px;
   background: white;
   width: 100%;
+
 }
 
 .title2 {
@@ -143,8 +145,10 @@ button {
 
 #histories {
   display: flex;
+
   flex-wrap: wrap;
   justify-content: space-around;
+  
 }
 
 .card {
@@ -182,11 +186,20 @@ button {
 }
 
 @media only screen and (max-width: 700px) {
-  .box-container {
+  .divider-container {
     padding: 0 20px;
     width: 100%;
   }
   .card {
     flex-direction: column;
   }
+}
+@media only screen and (min-width:800px){
+#histories{
+  
+  display:grid;
+  grid-template-columns: repeat(auto-fit,minmax(320px,1fr));
+  grid-gap:20px;
+}
+
 }
