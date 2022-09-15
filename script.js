@@ -46,18 +46,21 @@ const typeController = (e) => {
     display.innerHTML += `<span class="green">${newLetter === " " ? "▪" : newLetter}</span>`;
   } else {
     display.innerHTML += `<span class="red">${newLetter === " " ? "▪" : newLetter}</span>`;
+    errorCount++
   }
 
   // check if given question text is equal to user typed text
   if (questionText === userText) {
     gameOver();
   }
+  
 };
 
 const validate = (key) => {
   if (key === questionText[userText.length - 1]) {
     return true;
   }
+  
   return false;
 };
 
@@ -70,9 +73,8 @@ const gameOver = () => {
   const timeTakenWithPoint = (finishTime - startTime) / 1000;
   const timeTaken = parseInt(timeTakenWithPoint);
 
-  // const displayId = document.getElementById('display')
-  const errorCount = document.getElementsByClassName('bold.red');
- console.log(errorCount[0])
+  
+ 
 
   // show result modal
   resultModal.innerHTML = "";
